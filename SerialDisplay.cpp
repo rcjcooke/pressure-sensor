@@ -2,12 +2,12 @@
 
 #include "SerialDisplay.hpp"
 
-SerialDisplay::SerialDisplay(SerialDisplayConfiguration* configuration) {
-  mConfigurationPtr = configuration;
+SerialDisplay::SerialDisplay(SerialDisplayType serialDisplayType) {
+  mSerialDisplayType = serialDisplayType;
 }
 
 void SerialDisplay::clearSerialDisplay() {
-  switch(mConfigurationPtr->getSerialDisplayType()) {
+  switch(mSerialDisplayType) {
     case SerialDisplayType::ansi_vt100:
       Serial.print("\e[2J");
       Serial.print("\e[H");

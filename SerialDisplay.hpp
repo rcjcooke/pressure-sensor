@@ -1,7 +1,10 @@
 #ifndef __SERIALDISPLAY_H_INCLUDED__
 #define __SERIALDISPLAY_H_INCLUDED__
 
-#include "SerialDisplayConfiguration.hpp"
+enum class SerialDisplayType {
+  ansi_vt100,
+  serialMonitor
+};
 
 class SerialDisplay {
 
@@ -9,7 +12,7 @@ public:
   /*******************************
    * Constructors
    *******************************/
-  SerialDisplay(SerialDisplayConfiguration* configuration);
+  SerialDisplay(SerialDisplayType serialDisplayType);
 
 protected:
   /*******************************
@@ -22,8 +25,8 @@ private:
   /*******************************
    * Member variables
    *******************************/
-  // The display configuration
-  SerialDisplayConfiguration* mConfigurationPtr;
+  // The display type
+  SerialDisplayType mSerialDisplayType;
 
 };
 

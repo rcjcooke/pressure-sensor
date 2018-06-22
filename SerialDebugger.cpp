@@ -1,7 +1,7 @@
 #include "SerialDebugger.hpp"
 #include "HashMap.h"
 
-SerialDebugger::SerialDebugger() : SerialDisplay(new SerialDisplayConfiguration(SerialDisplayType::ansi_vt100)) {
+SerialDebugger::SerialDebugger() : SerialDisplay(SerialDisplayType::ansi_vt100) {
   Serial.begin(115200);
   mNextPrintMillis = millis();
   mStatusValues = HashMap<String, String, MAX_DEBUG_VALUES>();
