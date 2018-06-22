@@ -1,5 +1,4 @@
 #include "SerialDebugger.hpp"
-#include "HashMap.h"
 
 SerialDebugger::SerialDebugger() : SerialDisplay(SerialDisplayType::ansi_vt100) {
   Serial.begin(115200);
